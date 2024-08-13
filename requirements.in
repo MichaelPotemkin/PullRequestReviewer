@@ -1,0 +1,8 @@
+langchain
+langchain_mistralai
+langchain_community
+langchain_openai
+openai
+gitpython
+pip-tools
+python-dotenv
