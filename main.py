@@ -25,14 +25,18 @@ elif args.repo_url and args.branch:
     git_processor.clone_repository(args.repo_url)
     differences = git_processor.get_branch_diff(args.branch)
     result = reviewer.review_diffs(differences)
-    for diff in result:
-        print(diff)
+    with open('reviewed_diffs.txt', 'w') as f:
+        for diff in result:
+            print(diff)
+            f.write(str(diff) + '\n')
 elif args.local_repo_path and args.branch:
     git_processor.set_local_repository(args.local_repo_path)
     differences = git_processor.get_branch_diff(args.branch)
     result = reviewer.review_diffs(differences)
-    for diff in result:
-        print(diff)
+    with open('reviewed_diffs.txt', 'w') as f:
+        for diff in result:
+            print(diff)
+            f.write(str(diff) + '\n')
 else:
     raise ValueError("Please provide either a pull request URL or a repository URL and branch name")
 
