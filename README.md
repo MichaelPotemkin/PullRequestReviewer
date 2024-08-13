@@ -8,4 +8,3 @@
 
 ## Usage
 1. Run the script using ```python main.py --pull-request-url <url>``` if you want to process a specific pull request
-2. 
